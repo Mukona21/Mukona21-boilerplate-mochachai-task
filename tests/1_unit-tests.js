@@ -15,10 +15,11 @@ suite('Unit Tests', function () {
       assert.isDefined('hello', 'A string is not undefined');
     });
     // #3
-    test('#isOk, #isNotOk', function () {
-      assert.isNotOk(null, 'null is falsey');
-      assert.isOk("I'm truthy", 'A string is truthy');
-      assert.isOk(true, 'true is truthy');
+    // .isOk(truthy) and .isNotOk(falsey) will pass
+test('#isOk, #isNotOk', function() {
+  assert.isNotOk(null, 'null is falsey');
+  assert.isOk("I'm truthy", 'a string is truthy');
+  assert.isOk(true, 'true is truthy');  
     });
     // #4
     test('#isTrue, #isNotTrue', function () {

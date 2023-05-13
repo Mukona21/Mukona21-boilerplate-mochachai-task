@@ -93,10 +93,10 @@ test('#isOk, #isNotOk', function() {
     });
     // #12
     test('Array #include, #notInclude', function () {
-      assert.include(winterMonths, 'jul', "It's summer in july...");
-      assert.notInclude(backendLanguages, 'javascript', 'JS is a backend language');
-    });
+       assert.notInclude(winterMonths, 'jul', "It's summer in july...");
+      assert.include(backendLanguages, 'javascript', 'JS is a backend language !!');
   });
+});
 
   // -----------------------------------------------------------------------------
 

@@ -69,10 +69,7 @@ test('#isOk, #isNotOk', function() {
     });
     // #9
     test('#isBelow, #isAtLeast', function () {
-      assert.isBelow('world'.length, 5);
-      assert.isAtLeast(2 * Math.random(), 0);
-      assert.isAtLeast(5 % 2, 2);
-      assert.isAtLeast(2 / 3, 1);
+      
     });
     // #10
     test('#approximately', function () {

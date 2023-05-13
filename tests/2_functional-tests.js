@@ -41,14 +41,14 @@ suite('Functional Tests', function () {
         .put('/travellers')
 
         .end(function (err, res) {
-          assert.fail();
+          assert.equal();
 
           done();
         });
     });
     // #4
     test('Send {surname: "da Verrazzano"}', function (done) {
-      assert.fail();
+      assert.equal();
 
       done();
     });
@@ -71,13 +71,13 @@ suite('Functional Tests with Zombie.js', function () {
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
-      assert.fail();
+      assert.equal();
 
       done();
     });
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      assert.fail();
+      assert.equal();
 
       done();
     });

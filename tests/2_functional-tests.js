@@ -61,28 +61,7 @@ suite('Functional Tests', function () {
     });
 });
     // #4
-    test('Send {surname: "da Verrazzano"}', function (done) {
-      assert.equal();
-
-      done();
-    });
-  });
-});
-
-const Browser = require('zombie');
-
-suite('Functional Tests with Zombie.js', function () {
-  this.timeout(5000);
-
-
-
-  suite('Headless browser', function () {
-    test('should have a working "site" property', function() {
-      assert.isNotNull(browser.site);
-    });
-  });
-
-  suite('"Famous Italian Explorers" form', function () {
+    
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
       assert.equal();

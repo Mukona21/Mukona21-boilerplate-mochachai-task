@@ -76,8 +76,8 @@ test('#isOk, #isNotOk', function() {
     });
     // #10
     test('#approximately', function () {
-      assert.approximately(weirdNumbers(0.5), 1, 0);
-      assert.approximately(weirdNumbers(0.2), 1, 0);
+      assert.approximately(weirdNumbers(0.5), 1, /*edit this*/ 0.5);
+      assert.approximately(weirdNumbers(0.2), 1, /*edit this*/ 0.8);
     });
   });
 

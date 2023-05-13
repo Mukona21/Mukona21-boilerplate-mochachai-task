@@ -78,33 +78,17 @@ suite('Functional Tests', function () {
     });
 });
     // #5
-  test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
-  // fill the form...
-  // then submit it pressing 'submit' button.
-  //
-  // in the callback...
-  // assert that the headless browser request succeeded
-  // assert that the text inside the element 'span#name' is 'Cristoforo'
-  // assert that the text inside the element 'span#surname' is 'Colombo'
-  // assert that the element 'span#dates' exists and its count is 1
-  browser.fill('surname', 'Colombo').pressButton('submit', function() {
-    /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
-
-    // pressButton is Async.  Waits for the ajax call to complete...
-
-    // assert that the headless browser request succeeded
-    browser.assert.status(200);
-    // assert that the text inside the element 'span#name' is 'Cristoforo'
-    browser.assert.text('span#name', 'Cristoforo');
-    // assert that the text inside the element 'span#surname' is 'Colombo'
-    browser.assert.text('span#surname', 'Colombo');
-    // assert that the element 'span#dates' exists and its count is 1
-    browser.assert.elements('span#dates', 1);
-
-    done(); // It's an async test, so we have to call 'done()''
+  test('Submit the surname "Polo" in the HTML form', function (done) {
+  browser.fill('surname', 'Polo').then(() => {
+    browser.pressButton('submit', () => {
+      browser.assert.success();
+      browser.assert.text('span#name', 'Marco');
+      browser.assert.text('span#surname', 'Polo');
+      browser.assert.elements('span#dates', 1);
+      done();
+    });
   });
 });
-
 
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {

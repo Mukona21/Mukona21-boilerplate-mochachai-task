@@ -21,6 +21,8 @@ suite('Functional Tests', function () {
           done();
         });
     });
+  });
+});
     // #2
     test('Test GET /hello with your name', function (done) {
       chai
@@ -77,6 +79,25 @@ suite('Functional Tests', function () {
       done();
     });
 });
+    const Browser = require('zombie');
+// Browser.site = 'https://ajaythanki-organic-space-meme-q9r4x4ppww7hx557-3000.preview.app.github.dev';
+// Browser.site = 'https://boilerplate-mochachai.akthanki.repl.co';
+Browser.site = 'http://0.0.0.0:3000';
+
+suite('Functional Tests with Zombie.js', function () {
+  this.timeout(5000);
+  const browser = new Browser();
+  suiteSetup(function(done) {
+    return browser.visit('/', done);
+  });
+
+  suite('Headless browser', function () {
+    test('should have a working "site" property', function() {
+      assert.isNotNull(browser.site);
+    });
+  });
+
+  suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
       browser.fill('surname','Colombo').then(() => {

@@ -99,6 +99,10 @@ suite('Functional Tests with Zombie.js', function () {
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
+    const Browser = require('zombie');
+    const assert = require('chai').assert;
+    Browser.site = 'http://0.0.0.0:3000';
+
     test('Submit the surname "Colombo" in the HTML form', function (done) {
       browser.fill('surname','Colombo').then(() => {
       browser.pressButton('submit',() => {
@@ -113,10 +117,16 @@ suite('Functional Tests with Zombie.js', function () {
     });
 
     // #6
-    test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      assert.equal();
-
+     test('Submit the surname "Vespucci" in the HTML form', function (done) {
+      browser.fill('surname','Vespucci').then(() => {
+      browser.pressButton('submit',() => {
+        browser.assert.success();
+        browser.assert.text('span#name','Amerigo');
+        browser.assert.text('span#surname','Vespucci');
+        browser.assert.elements('span#dates',1);
       done();
+      });
+      });
     });
   });
 });

@@ -78,7 +78,7 @@ suite('Functional Tests', function () {
     });
 });
     // #5
-    test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
+   test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
   // fill the form...
   // then submit it pressing 'submit' button.
   //
@@ -88,22 +88,30 @@ suite('Functional Tests', function () {
   // assert that the text inside the element 'span#surname' is 'Colombo'
   // assert that the element(s) 'span#dates' exist and their count is 1
   browser.fill('surname', 'Colombo').pressButton('submit', function() {
-    /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
-
-    // pressButton is Async.  Waits for the ajax call to complete...
 
     // assert that status is OK 200
     browser.assert.success();
+
     // assert that the text inside the element 'span#name' is 'Cristoforo'
     browser.assert.text('span#name', 'Cristoforo');
+
     // assert that the text inside the element 'span#surname' is 'Colombo'
     browser.assert.text('span#surname', 'Colombo');
+
     // assert that the element(s) 'span#dates' exist and their count is 1
     browser.assert.element('span#dates', 1);
+
+    // Additional e2e tests
+    // Assert that the form has been cleared after submission
+    browser.assert.input('input[name="surname"]', '');
+
+    // Assert that the form cannot be resubmitted
+    browser.assert.elementNotPresent('button[type="submit"]');
 
     done(); // It's an async test, so we have to call 'done()''
   });
 });
+
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
       assert.equal();

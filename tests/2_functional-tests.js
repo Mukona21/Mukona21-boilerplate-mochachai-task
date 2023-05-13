@@ -78,36 +78,32 @@ suite('Functional Tests', function () {
     });
 });
     // #5
-  test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
-  // fill the form...
-  // then submit it pressing 'submit' button.
-  //
-  // in the callback...
-  // assert that status is OK 200
-  // assert that the text inside the element 'span#name' is 'Cristoforo'
-  // assert that the text inside the element 'span#surname' is 'Colombo'
-  // assert that the element(s) 'span#dates' exist and their count is 1
-  browser.fill('surname', 'Colombo').pressButton('submit', function() {
-    /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
+  const Browser = require('zombie');
+const assert = require('assert');
 
-    // pressButton is Async.  Waits for the ajax call to complete...
+describe('Testing form submission', function() {
+  before(function() {
+    this.browser = new Browser();
+  });
 
-    // assert that status is OK 200
-    browser.assert.success();
+  it('should submit "surname" : "Colombo" and check results', function(done) {
+    const browser = this.browser;
+    browser.visit('http://localhost:3000/', function() {
+      browser.fill('surname', 'Colombo').pressButton('submit', function() {
+        // assert that status is OK 200
+        assert.equal(browser.statusCode, 200);
+        // assert that the text inside the element 'span#name' is 'Cristoforo'
+        assert.equal(browser.text('span#name'), 'Cristoforo');
+        // assert that the text inside the element 'span#surname' is 'Colombo'
+        assert.equal(browser.text('span#surname'), 'Colombo');
+        // assert that the element(s) 'span#dates' exist and their count is 1
+        assert.equal(browser.queryAll('span#dates').length, 1);
 
-    // assert that the text inside the element 'span#name' is 'Cristoforo'
-    browser.assert.text('span#name', 'Cristoforo');
-
-    // assert that the text inside the element 'span#surname' is 'Colombo'
-    browser.assert.text('span#surname', 'Colombo');
-
-    // assert that the element(s) 'span#dates' exist and their count is 1
-    browser.assert.elements('span#dates', 1);
-
-    done(); // It's an async test, so we have to call 'done()''
+        done(); // It's an async test, so we have to call 'done()''
+      });
+    });
   });
 });
-
 
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {

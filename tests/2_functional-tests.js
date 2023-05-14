@@ -84,7 +84,7 @@ suite('Functional Tests', function () {
 });
 const Browser = require('zombie');
 // Browser.site = 'https://ajaythanki-organic-space-meme-q9r4x4ppww7hx557-3000.preview.app.github.dev';
-// Browser.site = 'https://boilerplate-mochachai.akthanki.repl.co';
+// Browser.site = 'https://boilerplate-mochachai-1.mutshinyenethen.repl.co';
 Browser.site = 'http://0.0.0.0:3000';
 
 suite('Functional Tests with Zombie.js', function () {

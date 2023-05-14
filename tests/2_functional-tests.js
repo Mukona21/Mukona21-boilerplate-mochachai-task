@@ -32,6 +32,7 @@ suite('Functional Tests', function () {
     .get(`/hello?name=${name}`)
     .end(function(err, res) {
       // res is the response object
+      console.log(res); // Add this line to print out the response object
 
       // Replace assert.fail(). Make the test pass.
       // Test the status and the text response. Follow the test order like above.

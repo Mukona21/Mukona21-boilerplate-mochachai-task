@@ -33,7 +33,7 @@ suite('Functional Tests', function () {
     .get(`/hello?name=${name}`)
     .end(function(err, res) {
       assert.equal(res.status, 200); 
-      assert.equal(res.text, `hello ${name}`);
+      assert.equal(res.text, `hello Mutshinye`);
       done(); 
     });
 });

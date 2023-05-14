@@ -83,14 +83,16 @@ suite('Functional Tests', function () {
     });
 });
 const Browser = require('zombie');
-Browser.site = '0.0.0.0:3000';
+// Browser.site = 'https://ajaythanki-organic-space-meme-q9r4x4ppww7hx557-3000.preview.app.github.dev';
+// Browser.site = 'https://boilerplate-mochachai.akthanki.repl.co';
+Browser.site = 'http://0.0.0.0:3000';
 
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
   const browser = new Browser();
   suiteSetup(function(done) {
-  return browser.visit('/', done);
-});
+    return browser.visit('/', done);
+  });
 
   suite('Headless browser', function () {
     test('should have a working "site" property', function() {

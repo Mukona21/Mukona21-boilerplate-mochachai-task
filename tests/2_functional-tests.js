@@ -24,17 +24,22 @@ suite('Functional Tests', function () {
   });
 });
     // #2
-    test('Test GET /hello with your name', function (done) {
-      chai
-        .request(server)
-        .keepOpen()
-        .get('/hello?name=Mutshinye')
-        .end(function (err, res) {
-          assert.equal(res.status, 200);
-          assert.equal(res.text, 'hello Mutshinye');
-          done();
-        });
+    test('Test GET /hello with your name', function(done) {
+  // Don't forget the callback...
+  chai
+    .request(server) // 'server' is the Express App
+    .get('/hello?name=Mutshinye') /** <=== Put your name in the query **/
+    .end(function(err, res) {
+      // res is the response object
+
+      // Your tests here.
+      // Replace assert.fail(). Make the test pass.
+      // Test the status and the text response. Follow the test order like above.
+      assert.equal(res.status, 200);
+      assert.equal(res.text, 'hello Mutshinye' /** <==  Put your name here **/);
+      done(); // Always call the 'done()' callback when finished.
     });
+});
     // #3
    test('send {surname: "Colombo"}', function(done) {
   // we setup the request for you...

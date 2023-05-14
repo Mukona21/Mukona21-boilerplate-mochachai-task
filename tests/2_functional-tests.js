@@ -23,7 +23,25 @@ suite('Functional Tests', function () {
     });
   });
 });
-   
+  // #2
+  test('Test GET /hello with your name', function(done) {
+  // Don't forget the callback...
+  const name = 'Mutshinye'; 
+  chai
+    .request(server) // 'server' is the Express App
+    .get(`/hello?name=${name}`)
+    .end(function(err, res) {
+      // res is the response object
+
+      // Your tests here.
+      // Replace assert.fail(). Make the test pass.
+      // Test the status and the text response. Follow the test order like above.
+      assert.equal(res.status, 200);
+      assert.equal(res.text, `hello ${name}`);
+      done(); // Always call the 'done()' callback when finished.
+    });
+});
+ 
     // #3
    test('send {surname: "Colombo"}', function(done) {
   // we setup the request for you...

@@ -28,15 +28,13 @@ suite('Functional Tests', function () {
   // Don't forget the callback...
   const name = 'Mutshinye'; 
   chai
-    .request(app) // 'app' is your Express application instance
+    .request(sever) 
+    .keepOpen()
     .get(`/hello?name=${name}`)
     .end(function(err, res) {
-      // res is the response object
-
-      // Your tests here.
-      assert.equal(res.status, 200); // test for response status code
-      assert.equal(res.text, `hello ${name}`); // test for response text
-      done(); // Always call the 'done()' callback when finished.
+      assert.equal(res.status, 200); 
+      assert.equal(res.text, `hello ${name}`);
+      done(); 
     });
 });
 

@@ -1,5 +1,5 @@
 {
-  "name": "automated-testing-app",
+  "name": "c",
   "version": "0.0.1",
   "description": "Boilerplate for the Quality Assurance and Testing with Chai challenges",
   "main": "server.js",
@@ -15,5 +15,17 @@
     "mocha": "^9.2.2",
     "zombie": "^6.1.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "chai-task"
+  },
+  "keywords": [
+    "chai-task"
+  ],
+  "author": "Mutshinye"
 }

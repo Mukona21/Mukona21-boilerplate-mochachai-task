@@ -83,7 +83,6 @@ suite('Functional Tests', function () {
     });
 });
 const Browser = require('zombie');
-// Browser.site = "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
 // Browser.site = 'https://boilerplate-mochachai-1.mutshinyenethen.repl.co';
 Browser.site = 'http://0.0.0.0:3000';
 
